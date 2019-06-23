@@ -1,0 +1,90 @@
+<div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-shopping-cart fa-fw"> </i><strong>Channels Manager</strong></h3>
+                </div>
+            <div class="panel-body">
+
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#channels-list" data-toggle="tab"><i class="fa fa-th-list fa-fw"> </i> <strong>Channels</strong></a></li>
+                    <li><a href="#add-channels" data-toggle="tab"><i class="fa fa-plus-circle fa-fw"> </i> <strong>Add Channels</strong></a></li>
+
+                </ul>
+                <div class="tab-content">
+                  <div class="active tab-pane" id="channels-list">
+                      <div class="panel panel-info">
+                            <table id="channel-list-table" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><strong>Channel</strong></td>
+                                        <td><strong>Messages</strong></td>
+                                        <td><strong>Status</strong></td>
+                                        <td><strong>Is Public</strong></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for this_channel in chat_channels_list %}
+                                    <tr>
+                                        <td><a href="#" id="{{ this_channel.channelid }}">  {{ this_channel.channel }}</a></td>
+                                        <td>{{ this_channel.total_unread }}</td>
+                                        <td>{{ this_channel.channel_active }}</td>
+                                        <td>{{ this_channel.is_channel_public }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td><strong>Channel</strong></td>
+                                        <td><strong>Messages</strong></td>
+                                        <td><strong>Status</strong></td>
+                                        <td><strong>Is Public</strong></td>
+                                    </tr>
+
+                                </tfoot>
+                            </table>
+                      </div>
+                  </div>
+                    <div class="tab-pane" id="add-channels">
+
+                        <div class="panel panel-info">
+                            <div class="panel-body">
+                            <div class="col-lg-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                                    <input type="text" id="channelnameid" class="form-control" placeholder="Channel Name">
+                                </div>
+                                <div class="form-group input-group">
+                                    <textarea class="form-control" id="channeldescriptionid" ondblclick="this.value =''">  Channel Description</textarea>
+                                </div>
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                                    <select id="channepublicid" class="form-control">
+                                        <option value="select" selected="selected">Is Channel Public ? </option>
+
+                                        <option value="true">True</option>
+                                        <option value="false">False</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <button type="button" class="btn btn-success btn-block" id="save-channelbutt" onclick="SaveChannel()"><strong><i class="fa fa-save fa-fw"> </i> Create Channel </strong></button>
+                                </div>
+
+                            </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            </div>
+
+</div>

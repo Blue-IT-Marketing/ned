@@ -1,0 +1,54 @@
+
+
+
+            <div id="sidebarmenu" class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="#" id="home" onclick="Menu(this.id)"><i class="fa fa-fw fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#" id="about" onclick="Menu(this.id)"><i class="fa fa-fw fa-info-circle"></i> About</a>
+                    </li>
+                    <li>
+                        <a href="#" id="contact" onclick="Menu(this.id)"><i class="fa fa-fw fa-envelope"></i> Contacts</a>
+                    </li>
+                    <li>
+                        <a href="#" id="services" onclick="Menu(this.id)"><i class="fa fa-fw fa-briefcase"></i> Services</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-sign-in"></i> Account <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#" id="profile" onclick="OnAuthMenu(this.id)"> <i class="fa fa-w fa-user-md"> </i> Profile</a>
+                            </li>
+                            <li>
+                                <a href="#" id="settings" onclick="OnAuthMenu(this.id)"> <i class="fa fa-w fa-cogs"> </i> Settings</a>
+                            </li>
+                            <li>
+                                <a href="#" id="projects" onclick="OnAuthMenu(this.id)"> <i class="fa fa-w fa-archive"> </i> Projects</a>
+                            </li>
+                            <li>
+                                <a href="#" id="drive" onclick="OnAuthMenu(this.id)"> <i class="fa fa-w fa-cloud"> </i> Drive</a>
+                            </li>
+                            <li>
+                                <a href="#" id="login" onclick="Menu(this.id)"><i class="fa fa-fw fa-sign-in"> </i> login</a>
+                            </li>
+                            <li>
+                                <a href="#" id="logout" onclick="OnAuthMenu(this.id)"><i class="fa fa-fw fa-sign-out"> </i> logout</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" id="chat" onclick="OnAuthMenu(this.id)"><i class="fa fa-fw fa-user-md"></i> Chat</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#dashboardsub"><i class="fa fa-fw fa-sign-in"></i> Dashboard <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="dashboardsub" class="collapse">
+                        <li><a href="{{ adminloginlink }}" id="dashlogin"><i class="fa fa-fw fa-sign-in"> </i> Admin</a>  </li>
+                        <li><a href="#" id="dashboard" onclick="OnAuthMenu(this.id)"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>

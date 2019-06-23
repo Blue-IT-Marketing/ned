@@ -1,0 +1,208 @@
+
+
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+        <a href="#" id="settings" onclick="sidebarMenu(this.id)"><img src="/static/img/ned.jpg" title="NED Media Group"></a>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-cogs"></i> <strong>Settings</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-cogs fa-fw"></i> <strong>Preferences</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-truck"> </i>  <strong>Default Delivery Options</strong> </span>
+                            <select id="deliveroptions" class="form-control">
+                                {% if this_settings.delivery_options == "postal" %}
+                                    <option value="postal" selected="selected">Postal</option>
+                                {% else %}
+                                    <option value="postal">Postal</option>
+                                {% endif %}
+
+                                {% if this_settings.delivery_options == "courier" %}
+                                        <option value="courier" selected="selected">Courier</option>
+                                {% else %}
+                                        <option value="courier">Courier</option>
+                                {% endif %}
+
+                                {% if this_settings.delivery_options == "pickup" %}
+                                        <option value="pickup" selected="selected">Pick Up / Own Delivery</option>
+                                {% else %}
+                                        <option value="pickup">Pick Up / Own Delivery</option>
+                                {% endif %}
+                            </select>
+                        </div>
+
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-money"> </i>  <strong>Default Payment Options</strong> </span>
+                            <select id="paymentoptions" class="form-control">
+                                {% if this_settings.payment_options == "cod" %}
+                                    <option value="cod" selected="selected">Cash on Delivery</option>
+                                {% else %}
+                                    <option value="cod">Cash on Delivery</option>
+                                {% endif %}
+                                {% if this_settings.payment_options == "directdeposit" %}
+                                    <option value="directdeposit" selected="selected">Direct Deposit</option>
+                                {% else %}
+                                    <option value="directdeposit">Direct Deposit</option>
+                                {% endif %}
+                                {% if this_settings.payment_options == "eft" %}
+                                    <option value="eft" selected="selected">EFT</option>
+                                {% else %}
+                                    <option value="eft">EFT</option>
+                                {% endif %}
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="fa fa-info fa-fw"></i>
+            <strong>Notifications</strong>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bullhorn fa-fw"></i>
+                    <strong>Notification Channels</strong>
+                </h3>
+            </div>
+            <div class="form-group"></div>
+            <div class="form-group input-group">
+                <span class="input-group-addon">
+                    {% if this_settings.notification_method_email == true %}
+                    <input type="checkbox" name="notificationmethod" id="email" value="email" class="pull-left" checked="checked"> {% else %}
+                    <input type="checkbox" name="notificationmethod" id="email" value="email" class="pull-left"> {% endif %}
+                    <i class="fa fa-fw fa-envelope-square"> </i>
+                    <strong> Send Email Notifications</strong>
+                </span>
+
+            </div>
+
+            <div class="form-group input-group">
+                <span class="input-group-addon">
+                    {% if this_settings.notification_method_sms == true %}
+                    <input type="checkbox" name="notificationmethod" id="sms" value="sms" class="pull-left" checked="checked"> {% else %}
+                    <input type="checkbox" name="notificationmethod" id="sms" value="sms" class="pull-left"> {% endif %}
+                    <i class="fa fa-fw fa-mobile-phone"> </i>
+                    <strong> Send SMS Notifications</strong>
+                </span>
+
+            </div>
+
+            <div class="form-group input-group">
+                <span class="input-group-addon">
+                    {% if this_settings.notification_method_phone == true %}
+                    <input type="checkbox" name="notificationmethod" id="phone" value="phone" class="pull-left" checked="checked"> {% else %}
+                    <input type="checkbox" name="notificationmethod" id="phone" value="phone" class="pull-left"> {% endif %}
+                    <i class="fa fa-fw fa-phone"> </i>
+                    <strong> Make Phone Notifications </strong>
+                </span>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bookmark-o fa-fw"> </i>
+                    <strong>Notification Subjects</strong>
+                </h3>
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon" title="enable so we can send you notifications on your project status">
+                    {% if this_settings.notification_subject_projects == true %}
+                    <input type="checkbox" name="notificationsubject" id="noteprojects" value="projects" class="pull-left" checked="checked"> {% else %}
+                    <input type="checkbox" name="notificationsubject" id="noteprojects" value="projects" class="pull-left"> {% endif %}
+                    <i class="fa fa-fw fa-folder-open-o"> </i>
+                    <strong> Send Project Notifications </strong>
+                </span>
+            </div>
+
+
+            <div class="form-group input-group">
+                <span class="input-group-addon" title="enable so we can send you notifications on your products delivery schedule">
+                    {% if this_settings.notification_subject_deliveries == true %}
+                    <input type="checkbox" name="notificationsubject" id="delivery" value="delivery" class="pull-left" checked="checked"> {% else %}
+                    <input type="checkbox" name="notificationsubject" id="delivery" value="delivery" class="pull-left"> {% endif %}
+                    <i class="fa fa-fw fa-truck"> </i>
+                    <strong> Send Delivery Notifications </strong>
+                </span>
+            </div>
+
+            <div class="form-group input-group">
+                <span class="input-group-addon" title="enable so we can send you notifications on your payments status">
+                    {% if this_settings.notification_subject_payments == true %}
+                    <input type="checkbox" name="notificationsubject" id="payments" value="payments" class="pull-left" checked="checked"> {% else %}
+                    <input type="checkbox" name="notificationsubject" id="payments" value="payments" class="pull-left"> {% endif %}
+                    <i class="fa fa-fw fa-credit-card"> </i>
+                    <strong> Send Payments Notifications </strong>
+                </span>
+            </div>
+
+            <div class="form-group input-group">
+                <span class="input-group-addon" title="enable so we can send you notifications on our promotions">
+                    {% if this_settings.notification_subject_promotions == true %}
+                    <input type="checkbox" name="notificationsubject" id="promotions" value="promotions" class="pull-left" checked="checked"> {% else %}
+                    <input type="checkbox" name="notificationsubject" id="promotions" value="promotions" class="pull-left"> {% endif %}
+                    <i class="fa fa-fw fa-barcode"> </i>
+                    <strong> Send Promotional Notifications </strong>
+                </span>
+            </div>
+
+        </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="fa fa-cogs fa-fw"></i>
+            <strong> Settings</strong>
+        </h3>
+
+    </div>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" id="savesettings" onclick="SaveSettings()">
+            <strong>Save Settings</strong>
+        </button>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-block btn-warning" id="defaultsettings">
+            <strong>Default Settings</strong>
+        </button>
+    </div>
+    <div class="form-group">
+        <div id="formresponseinf"></div>
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+    <div class="row">
+
+
+
+        
+    </div>
+</div>

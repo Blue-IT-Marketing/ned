@@ -1,0 +1,124 @@
+
+
+<div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-shopping-cart fa-fw"> </i><strong>Products Manager</strong></h3>
+                </div>
+                <div class="panel-body">
+
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#products-list" data-toggle="tab"><i class="fa fa-th-list fa-fw"> </i> <strong>Products List</strong></a></li>
+                    <li><a href="#add-products" data-toggle="tab"><i class="fa fa-plus-circle fa-fw"> </i> <strong>Add Products</strong></a></li>
+
+                </ul>
+                <div class="tab-content">
+                  <div class="active tab-pane" id="products-list">
+                      <div class="panel panel-info">
+                            <table id="products-list-table" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><strong>Product Code</strong></td>
+                                        <td><strong>Product Name</strong></td>
+                                        <td><strong>Category</strong></td>
+                                        <td><strong>UOM</strong></td>
+                                        <td><strong>Cost Price</strong></td>
+                                        <td><strong>Sell Price</strong></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for this_product in products_list %}
+                                    <tr>
+                                        <td><a href="#" id="{{ this_product.product_code }}" onclick="loadThisProduct(this.id)">{{ this_product.product_code }}</a></td>
+                                        <td>{{ this_product.product_name }}</td>
+                                        <td>{{ this_product.product_category_code }}</td>
+                                        <td>{{ this_product.product_uom }}</td>
+                                        <td>{{ this_product.cost_per_item }}</td>
+                                        <td>{{ this_product.price_per_item }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                        <td><strong>Product Code</strong></td>
+                                        <td><strong>Product Name</strong></td>
+                                        <td><strong>Category</strong></td>
+                                        <td><strong>UOM</strong></td>
+                                        <td><strong>Cost Price</strong></td>
+                                        <td><strong>Sell Price</strong></td>
+                                </tfoot>
+                            </table>
+
+                      </div>
+                  </div>
+                  <div class="tab-pane" id="add-products">
+                      <div class="col-lg-12">
+                          <hr>
+                      </div>
+                      <div class="col-lg-6">
+                      <form class="form-horizontal" role="form">
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                            <input type="text" id="productnameid" class="form-control" placeholder="Product Name">
+                        </div>
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                            <textarea class="form-control" id="productdescriptionid" ondblclick="this.value ='' "> Product Description</textarea>
+                        </div>
+
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                            <select id="productcategoryid" class="form-control">
+                                <option value="select" selected="selected">Select Category</option>
+                                {% for this_category in category_list %}
+                                        <option value="{{ this_category.category_code }}">{{ this_category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                            <input type="text" id="uomid" class="form-control" placeholder="UOM">
+                        </div>
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon">R </span>
+                            <input type="text" id="costpriceid" class="form-control" placeholder="Cost Price">
+                            <span class="input-group-addon">.00 </span>
+                        </div>
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon">R </span>
+                            <input type="text" id="sellingpriceid" class="form-control" placeholder="Selling Price">
+                            <span class="input-group-addon">.00 </span>
+                        </div>
+
+                          <div class="panel panel-footer">
+                          <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                              <span class="input-group-addon"><i class="fa fa-file-image-o fa-fw"> </i> </span>
+                              <input type="file"  id="file" name="files[]" onchange="handleFileSelect(this)">
+                              <img id="thumbnailid">
+                              <output id="list"></output>
+
+                          </div>
+                          <div class="form-group">
+                              <progress value="0" max="100" id="progressbar" class="form-control">0%</progress>
+                          </div>
+                         </div>
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-primary btn-block" id="addproductbutt" onclick="SaveProduct()"><strong><i class="fa fa-save"> </i> Save Product</strong></button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="reset" class="btn btn-warning btn-block"><strong><i class="fa fa-cut"> </i> Reset</strong></button>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="formresponseinf"></div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+                </div>
+            </div>
+</div>
+

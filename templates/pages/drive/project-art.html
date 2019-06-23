@@ -1,0 +1,76 @@
+
+
+
+
+
+<div class="panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><strong><i class="fa fa-server"> </i>  Project Designs Drive</strong></h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel-body">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> <i class="fa fa-file-image-o"> </i> <strong>Thumbnail</strong></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel-body">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> <i class="fa fa-file-archive-o"> </i> <strong> Files </strong> </h3>
+                    </div>
+                    <table id="previous-files-table" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td><strong><small><i class="fa fa-check-square"> </i> Use</small></strong></td>
+                                <td><strong><small><i class="fa fa-file"> </i> Filename</small></strong></td>
+                                <td><strong><small><i class="fa fa-paint-brush"> </i> Project Name</small></strong></td>
+                                <td><strong><small><i class="fa fa-calendar"> </i> Date</small></strong></td>
+                                <td><strong><small><i class="fa fa-calendar-times-o"> </i> Time</small></strong></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for this_project_file in project_art_drive_list %}
+                            <tr>
+                                <td><input type="checkbox" id="{{ this_project_file.fileid }}"> </td>
+                                <td>{{ this_project_file.filename }}</td>
+                                <td>{{ this_project_file.folder_name }}</td>
+                                <td>{{ this_project_file.date_uploaded }}</td>
+                                <td>{{ this_project_file.time_uploaded }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><strong><small><i class="fa fa-check-square"> </i> Use</small></strong></td>
+                                <td><strong><small><i class="fa fa-file"> </i> Filename</small></strong></td>
+                                <td><strong><small><i class="fa fa-paint-brush"> </i> Project Name</small></strong></td>
+                                <td><strong><small><i class="fa fa-calendar"> </i> Date</small></strong></td>
+                                <td><strong><small><i class="fa fa-calendar-times-o"> </i> Time</small></strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel-body">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"> <strong><i class="fa fa-cloud-upload"> </i> Upload Designs</strong></h4>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

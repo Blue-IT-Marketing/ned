@@ -1,0 +1,24 @@
+
+        <form class="form-horizontal" role="form" onchange="switchDeliveryForm()">
+            <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                <select id="deliveroptions" class="form-control">
+                    {% if user_delivery_settings.delivery_options == "postal" %}
+                        <option value="postal" selected="selected">Postal</option>
+                    {% else %}
+                        <option value="postal">Postal</option>
+                    {% endif %}
+
+                    {% if user_delivery_settings.delivery_options == "courier" %}
+                            <option value="courier" selected="selected">Courier</option>
+                    {% else %}
+                            <option value="courier">Courier</option>
+                    {% endif %}
+
+                    {% if user_delivery_settings.delivery_options == "pickup" %}
+                            <option value="pickup" selected="selected">Pick Up / Own Delivery</option>
+                    {% else %}
+                            <option value="pickup">Pick Up / Own Delivery</option>
+                    {% endif %}
+                </select>
+            </div>
+        </form>

@@ -1,0 +1,52 @@
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-envelope fa-fw"> </i> <strong> Contact Messages </strong> </h3>
+                </div>
+
+                <div class="panel-body">
+                    <table id="contact-list-table" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td><strong>Names</strong></td>
+                                <td><strong>Email</strong></td>
+                                <td><strong>Cell</strong></td>
+                                <td><strong>Subject</strong></td>
+                                <td><strong>Date</strong></td>
+                                <td><strong>Time</strong></td>
+                                <td><strong>Responded</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for this_message in contact_messages_list %}
+                            <tr>
+                                <td><a href="#" id="contact-{{ this_message.messageid }}" onclick="SubDashMenu(this.id)"> <strong>{{ this_message.names }}</strong></a></td>
+                                <td><strong>{{ this_message.email }}</strong></td>
+                                <td><strong>{{ this_message.cell }}</strong></td>
+                                <td><strong>{{ this_message.subject }}</strong></td>
+                                <td><strong>{{ this_message.datesubmitted }}</strong></td>
+                                <td><strong>{{ this_message.timesubmitted }}</strong></td>
+                                <td><strong>{{ this_message.responsesent }}</strong></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><strong>Names</strong></td>
+                                <td><strong>Email</strong></td>
+                                <td><strong>Cell</strong></td>
+                                <td><strong>Subject</strong></td>
+                                <td><strong>Date</strong></td>
+                                <td><strong>Time</strong></td>
+                                <td><strong>Responded</strong></td>
+                            </tr>
+                        </tfoot>
+
+                    </table>
+                </div>
+            </div>

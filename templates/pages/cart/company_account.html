@@ -1,0 +1,20 @@
+
+
+
+
+<form class="form-horizontal" role="presentation">
+
+    <div class="form-group input-group">
+        <span class="input-group-addon"> <i class="fa fa-bank"> </i> Select Bank </span>
+        <select id="select-bank" class="form-control" onchange="Payments.load_bank_account()">
+            <option value="selectbank" selected="selected">Select Bank</option>
+            <option value="standard">Standard Bank</option>
+            <option value="fnb">FNB</option>
+            <option value="absa">ABSA</option>
+            <option value="nedbank">Nedbank</option>
+        </select>
+    </div>
+
+    <div id="bank-details-form-response"></div>
+
+</form>

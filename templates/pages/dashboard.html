@@ -1,0 +1,68 @@
+
+
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="#" id="dashboard" onclick="sidebarMenu(this.id)"><img src="/static/img/ned.jpg" title="NED Media Group"></a>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-dashboard"></i> <strong>Dashboard</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="fa fa-info-circle"></i>  <strong>Social Media?</strong> Social media integration coming soon
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-dashboard fa-fw"> </i> <strong>Dashboard</strong> </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="dash-clients" onclick="DashMenu(this.id)"><a href="#"><i class="fa fa-user-md fa-fw"> </i>  <strong> Clients</strong></a></li>
+                        <li class="list-group-item" id="dash-orders" onclick="DashMenu(this.id)"><a href="#"><i class="fa fa-shopping-cart fa-fw"> </i>  <strong> Orders</strong></a></li>
+                        <li class="list-group-item" id="dash-payments" onclick="DashMenu(this.id)"><a href="#"><i class="fa fa-credit-card fa-fw"> </i>  <strong> Payment Requests</strong></a></li>
+                        <li class="list-group-item" id="dash-contacts" onclick="DashMenu(this.id)"><a href="#"><i class="fa fa-envelope fa-fw"> </i>  <strong> Contact Messages</strong></a></li>
+                        <li class="list-group-item" id="dash-chat" onclick="DashMenu(this.id)"><a href="#"><i class="fa fa-comment-o fa-fw"> </i>  <strong> Chat </strong></a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-shopping-cart fa-fw"></i> <strong>Stock</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+
+                        <li class="list-group-item" id="dash-category" onclick="DashMenu(this.id)"><a href="#"><i class="fa fa-folder"> </i> <strong>Categories</strong> </a></li>
+                        <li class="list-group-item" id="dash-products" onclick="DashMenu(this.id)"><a href="#"><i class="fa fa-shopping-cart"> </i> <strong>Products</strong> </a></li>
+                        <li class="list-group-item"><a href="#"><i class="fa fa-barcode"> </i> <strong>Stock Management </strong> </a></li>
+                        <li class="list-group-item"><a href="#"><i class="fa fa-info"> </i> <strong>Reports </strong> </a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-8">
+            <div id="dashboardbody"></div>
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+</div>

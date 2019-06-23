@@ -1,0 +1,76 @@
+<div class="panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title"> <strong> <i class="fa fa-truck"> </i> Pickup Address</strong></h4>
+
+    </div>
+<div class="row">
+
+<div class="col-lg-8">
+  <div class="panel-body">
+
+    <ul class="list-group">
+        <li class="list-group-item"><span class="list-group-item-heading">{% if company_setup.company_name != None %} {{ company_setup.company_name }} {% else %} Ned Media Group {% endif %}</span></li>
+        <li class="list-group-item"><span class="list-group-item-text">{% if company_setup.company_description != None %}{{  company_setup.company_description }} {% else %} Your Online Media Print Friend {% endif %}</span></li>
+    </ul>
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Stand # </span>
+            {% if company_physical_address.stand != None %}
+                <input type="text" class="form-control" id="standnumber" name="standnumber" value="{{ company_physical_address.stand }}" readonly>
+            {% else %}
+                <input type="text" class="form-control" id="standnumber" name="standnumber" readonly>
+            {% endif %}
+        </div>
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Street Name </span>
+            {% if company_physical_address.street_name != None %}
+                <input type="text" class="form-control" id="streetname" name="streetname" value="{{ company_physical_address.streetname }}" readonly>
+            {% else %}
+                <input type="text" class="form-control" id="streetname" name="streetname" readonly>
+            {% endif %}
+        </div>
+
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> City/Town </span>
+            {% if company_physical_address.city != None %}
+                <input type="text" class="form-control" id="physicalcity" name="physicalcity" value="{{ company_physical_address.city }}" readonly>
+            {% else %}
+                <input type="text" class="form-control" id="physicalcity" name="physicalcity" readonly>
+            {% endif %}
+        </div>
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Province </span>
+            {% if company_physical_address.province != None %}
+                <input type="text" class="form-control" id="physicalprovince" name="physicalprovince" value="{{ company_physical_address.province }}" readonly>
+            {% else %}
+                <input type="text" class="form-control" id="physicalprovince" name="physicalprovince" readonly>
+            {% endif %}
+        </div>
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Postal Code </span>
+            {% if company_physical_address.postal_code != None %}
+                <input type="text" class="form-control" id="physicalcode" name="physicalcode" value="{{ company_physical_address.postalcode }}" readonly>
+            {% else %}
+                <input type="text" class="form-control" id="physicalcode" name="physicalcode" readonly>
+            {% endif %}
+        </div>
+
+        <div class="form-group input-group">
+            <div class="row">
+                <div class="col-lg-4">
+                    <button type="button" class="btn btn-app btn-block btn-lg" id="print"><strong><i class="fa fa-print"> </i> Print </strong></button>
+                </div>
+                <div class="col-lg-4">
+                    <button type="button" class="btn btn-app btn-block btn-lg" id="email"><strong><i class="fa fa-envelope"> </i> Email </strong></button>
+                </div>
+                <div class="col-lg-4">
+                    <button type="button" class="btn btn-app btn-block btn-lg" id="sms"><strong><i class="fa fa-send-o"> </i> SMS </strong></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+
+

@@ -1,0 +1,73 @@
+
+
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title"><strong> <i class="fa fa-fw fa-info-circle"> </i> Product Information</strong></h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#product" data-toggle="tab"><i class="fa fa-shopping-bag fa-fw"> </i> <strong>Product </strong></a></li>
+            <li><a href="#stats" data-toggle="tab"><i class="fa fa-bar-chart-o fa-fw"> </i> <strong>Statistics</strong></a></li>
+
+        </ul>
+        <div class="tab-content">
+            <div class="active tab-pane" id="product">
+                <div class="panel-body">
+                        <form class="form-horizontal" role="presentation">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                                <input type="text" id="productnameid" class="form-control" value="{{ this_product.product_name }}">
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                                <textarea class="form-control" id="productdescriptionid">{{ this_product.product_description }}</textarea>
+                            </div>
+
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                                <input id="productcategoryid" class="form-control" type="text" value="{{ this_product.product_category_code }}">
+                            </div>
+
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-user-md fa-fw"> </i> </span>
+                                <input type="text" id="uomid" class="form-control" value="{{ this_product.product_uom }}">
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">R </span>
+                                <input type="text" id="costpriceid" class="form-control" value="{{ this_product.cost_per_item }}">
+                                <span class="input-group-addon">.00 </span>
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">R </span>
+                                <input type="text" id="sellingpriceid" class="form-control" value="{{ this_product.price_per_item }}">
+                                <span class="input-group-addon">.00 </span>
+                            </div>
+
+                              <div class="panel panel-footer">
+                                <input type="hidden" id="imageurl" value="{{ this_product.product_image_url }}">
+                                <canvas id="productimageid" onclick="showProductImage()"></canvas>
+                             </div>
+
+                          </form>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="stats">
+                <div class="panel-body">
+                    <div class="panel-heading">
+                            <h3 class="panel-title"> <strong> <i class="fa fa-fw fa-line-chart"> </i>  Statistics </strong></h3>
+                    </div>
+                    <strong>!! Coming soon</strong>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+</div>

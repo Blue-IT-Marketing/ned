@@ -1,0 +1,75 @@
+
+
+
+
+
+
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="#" id="home" onclick="sidebarMenu(this.id)"><img src="/static/img/ned.jpg" title="NED Media Group"></a>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-cloud fa-fw"></i> <strong> Art Drive</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-cloud fa-fw"> </i><strong>Drive Stats </strong></h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Drive Space     :</strong> {{ this_drive.drive_size }} MB </li>
+                        <li class="list-group-item"><strong>Used Space      :</strong> {{ this_drive.present_size }} MB</li>
+                        <li class="list-group-item"><strong>Total Files     :</strong> {{ this_drive.total_files }} </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-folder-open-o fa-fw"></i> <strong>Files By Projects</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"> {{ this_art_files.folder_name }} </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-file-image-o fa-fw"></i> <strong>Files</strong> </h3>
+                </div>
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-search-plus fa-fw"></i> <strong>Preview</strong></h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="text-right">
+                        <a href="#">Download Image <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

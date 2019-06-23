@@ -1,0 +1,97 @@
+
+
+
+<div class="panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title"><strong> <i class="fa fa-fw fa-info-circle"> </i> Category Information</strong></h3>
+    </div>
+
+    <div class="panel-body">
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#category" data-toggle="tab"><i class="fa fa-th-list fa-fw"> </i> <strong>Category </strong></a></li>
+            <li><a href="#products" data-toggle="tab"><i class="fa fa-plus-circle fa-fw"> </i> <strong>Category Products</strong></a></li>
+            <li><a href="#stats" data-toggle="tab"><i class="fa fa-bar-chart-o fa-fw"> </i> <strong>Statistics</strong></a></li>
+
+        </ul>
+        <div class="tab-content">
+          <div class="active tab-pane" id="category">
+              <div class="panel-body">
+                    <form class="form-horizontal" role="presentation">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-server"> </i> Category Name </span>
+                            <input type="text" class="form-control" id="categorynameid" value="{{ this_category.category_name }}">
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-file"> </i> Category Description </span>
+                            <textarea class="form-control" id="categorydescriptionid">{{ this_category.category_description }}</textarea>
+                        </div>
+
+                    </form>
+              </div>
+                <div class="panel-footer">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Category Image</h3>
+                    </div>
+                    <input type="hidden" id="imageurl" value="{{ this_category.image_url }}">
+                    <canvas id="categoryimageid" onclick="showCategoryImage()"></canvas>
+                </div>
+
+          </div>
+          <div class="tab-pane" id="products">
+              <div class="panel-body">
+                            <table id="products-list-table" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><strong>Product Code</strong></td>
+                                        <td><strong>Product Name</strong></td>
+                                        <td><strong>Category</strong></td>
+                                        <td><strong>UOM</strong></td>
+                                        <td><strong>Cost Price</strong></td>
+                                        <td><strong>Sell Price</strong></td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for this_product in products_list %}
+                                    <tr>
+                                        <td>{{ this_product.product_code }}</td>
+                                        <td>{{ this_product.product_name }}</td>
+                                        <td>{{ this_product.product_category_code }}</td>
+                                        <td>{{ this_product.product_uom }}</td>
+                                        <td>{{ this_product.cost_per_item }}</td>
+                                        <td>{{ this_product.price_per_item }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                        <td><strong>Product Code</strong></td>
+                                        <td><strong>Product Name</strong></td>
+                                        <td><strong>Category</strong></td>
+                                        <td><strong>UOM</strong></td>
+                                        <td><strong>Cost Price</strong></td>
+                                        <td><strong>Sell Price</strong></td>
+                                </tfoot>
+                            </table>
+              </div>
+
+          </div>
+          <div class="tab-pane" id="stats">
+              <div class="panel-body">
+                  <div class="panel-heading">
+                      <h3 class="panel-title"> <strong> <i class="fa fa-fw fa-line-chart"> </i>  Statistics </strong></h3>
+                  </div>
+
+                  <strong>!! Coming soon</strong>
+
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+</div>
+

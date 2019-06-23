@@ -1,0 +1,6 @@
+
+handlers:
+
+- url: /nav/.*
+  secure: always
+  script: nav.app

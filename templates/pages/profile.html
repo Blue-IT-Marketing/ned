@@ -1,0 +1,249 @@
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+        <a href="#" id="settings" onclick="sidebarMenu(this.id)"><img src="/static/img/ned.jpg" title="NED Media Group"></a>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-user"></i> <strong> Profile</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> <strong>Personal Details</strong></h3>
+                </div>
+                <div class="panel-body">
+
+                        <form class="form-horizontal" role="form">
+
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> <strong>User Details</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group input-group" id="namesform" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-user fa-fw"> </i> Names </span>
+                                        {% if this_account.names != None %}
+                                            <input type="text" class="form-control" id="names" name="names" value="{{ this_account.names }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="names" name="names" onclick="this.value=UserCredentials.Get_Names()">
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-mobile-phone fa-fw"> </i> Cell </span>
+                                        {% if this_account.cell != None %}
+                                            <input type="tel" class="form-control" id="cell" name="cell" value="{{ this_account.cell }}">
+                                        {% else %}
+                                            <input type="tel" class="form-control" id="cell" name="cell">
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-envelope fa-fw"> </i> Email </span>
+                                        {% if this_account.email != None %}
+                                            <input type="email" class="form-control" id="email" name="email" value="{{ this_account.email }}">
+                                        {% else %}
+                                            <input type="email" class="form-control" id="email" name="email" onclick="this.value=UserCredentials.Get_Email()">
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-external-link fa-fw"> </i> Website </span>
+                                        {% if this_account.website != None %}
+                                            <input type="url" class="form-control" id="website" name="website" value="{{ this_account.website }}">
+                                        {% else %}
+                                            <input type="url" class="form-control" id="website" name="website">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> <strong>Postal Address</strong></h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Box </span>
+                                        {% if this_postal.box != None %}
+                                            <input type="text" class="form-control" id="box" name="box" value="{{ this_postal.box }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="box" name="box">
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> City/Town </span>
+                                        {%  if this_postal.city != None %}
+                                            <input type="text" class="form-control" id="city" name="city" value="{{ this_postal.city }}">
+                                        {%  else %}
+                                            <input type="text" class="form-control" id="city" name="city">
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Province </span>
+                                        {% if this_postal.province != None %}
+                                            <input type="text" class="form-control" id="province" name="province" value="{{ this_postal.province }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="province" name="province">
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Postal Code </span>
+                                        {%  if this_postal.postalcode != None %}
+                                            <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{ this_postal.postalcode }}">
+                                        {%  else %}
+                                            <input type="text" class="form-control" id="postalcode" name="postalcode">
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> <strong>Physical Address</strong></h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Stand # </span>
+                                        {% if this_physical.stand != None %}
+                                            <input type="text" class="form-control" id="standnumber" name="standnumber" value="{{ this_physical.stand }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="standnumber" name="standnumber">
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Street Name </span>
+                                        {% if this_physical.streetname != None %}
+                                            <input type="text" class="form-control" id="streetname" name="streetname" value="{{ this_physical.streetname }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="streetname" name="streetname">
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> City/Town </span>
+                                        {% if this_physical.city != None %}
+                                            <input type="text" class="form-control" id="physicalcity" name="physicalcity" value="{{ this_physical.city }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="physicalcity" name="physicalcity">
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Province </span>
+                                        {% if this_physical.province != None %}
+                                            <input type="text" class="form-control" id="physicalprovince" name="physicalprovince" value="{{ this_physical.province }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="physicalprovince" name="physicalprovince">
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                        <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Postal Code </span>
+                                        {% if this_physical.postalcode != None %}
+                                            <input type="text" class="form-control" id="physicalcode" name="physicalcode" value="{{ this_physical.postalcode }}">
+                                        {% else %}
+                                            <input type="text" class="form-control" id="physicalcode" name="physicalcode">
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"> <i class="fa fa-cloud fa-fw"> </i> </span>
+                                    <button type="button" class="btn btn-primary btn-block" id="savepersonaldetailsbutt" onclick="PersonalDetailForm()"><strong> Save Personal Details</strong></button>
+                            </div>
+                            <div class="form-group">
+                                <div id="formresponseinf"></div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-inbox fa-fw"></i> <strong> Account Details</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><strong>Available R</strong></span>
+                                {% if this_wallet.balance != None %}
+                                    <input type="text" class="form-control" value="{{ "{:,.0f}".format(this_wallet.balance) }}">
+                                {%  else  %}
+                                    <input type="text" class="form-control">
+                                {% endif %}
+                                <span class="input-group-addon">.00</span>
+                            </div>
+
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><strong>Owed R</strong></span>
+                                {% if this_wallet.owed != None %}
+                                    <input type="text" class="form-control" value="{{ "{:,.0f}".format(this_wallet.owed) }}">
+                                {% else %}
+                                    <input type="text" class="form-control">
+                                {% endif %}
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"> <i class="fa fa-w fa-paypal"> </i> </span>
+                                <button type="button" class="btn btn-warning btn-block" id="addfunds" onclick="OnAuthMenu(this.id)"><strong> Add Funds</strong></button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="fa fa-key fa-fw"></i>
+            <strong>Two Factor Auth</strong>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                <span class="input-group-addon">
+                    <strong> Code </strong>
+                </span>
+                <input type="text" class="form-control" id="smscode">
+                <span class="input-group-addon">
+                    <a href="#">
+                        <strong onclick="SendCode()">
+                            <i class="fa fa-external-link"> </i> Get Code</strong>
+                    </a>
+                </span>
+
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon">
+                    <strong>
+                        <i class="fa fa-mobile-phone fa-fw"> </i>
+                    </strong>
+                </span>
+                <button type="button" class="btn btn-warning btn-block" onclick="ActivateCode()">
+                    <strong>Activate </strong>
+                </button>
+            </div>
+
+            <div class="form-group">
+                <div id="twofactorinf"></div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

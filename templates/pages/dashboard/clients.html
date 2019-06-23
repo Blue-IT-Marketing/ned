@@ -1,0 +1,38 @@
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-user-md fa-fw"> </i> <strong>Clients Details</strong> </h3>
+                </div>
+
+                <div class="panel-body">
+
+
+
+                    <table id="clients-list-table" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td><strong>Names</strong></td>
+                                <td><strong>Cell</strong></td>
+                                <td><strong>Email</strong></td>
+                                <td><strong>Website</strong></td>
+                                <td><strong>Date</strong></td>
+                                <td><strong>Time</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for this_client in clients_list %}
+                            <tr>
+                                <td><a href="#" id="{{ this_client.userid }}" onclick="SubDashMenu(this.id)"> <strong> {{ this_client.names }}</strong></a></td>
+                                <td>{{ this_client.cell }}</td>
+                                <td>{{ this_client.email }}</td>
+                                <td>{{ this_client.website }}</td>
+                                <td>{{ this_client.last_signin_date }}</td>
+                                <td>{{ this_client.last_signin_time }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>

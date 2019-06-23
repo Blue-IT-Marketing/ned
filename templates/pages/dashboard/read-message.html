@@ -1,0 +1,46 @@
+
+
+ <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title"> <strong>Contact Form Messages Reader</strong></h3>
+            </div>
+            <!-- /.panel-header -->
+            <div class="panel-body">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{ this_message.subject }}</h3>
+                <h5>From: {{ this_message.email }}, {{ this_message.cell }}, {{ this_message.names }}
+                  <span class="pull-right">{{ this_message.datesubmitted }} {{ this_message.timesubmitted }}</span></h5>
+              </div>
+              <!-- /.mailpanel-read-info -->
+              <div class="panel-heading  pull-right">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                    <i class="fa fa-trash-o"></i></button>
+                  <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
+                    <i class="fa fa-reply"></i></button>
+                  <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
+                    <i class="fa fa-share"></i></button>
+                </div>
+                <!-- /.btn-group -->
+                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                  <i class="fa fa-print"></i></button>
+              </div>
+              <!-- /.mailpanel-controls -->
+              <div class="panel-footer">
+                  <p>{{ this_message.body }}</p>
+              </div>
+              <!-- /.mailpanel-read-message -->
+            </div>
+
+
+            <!-- /.panel-footer -->
+            <div class="panel-footer">
+              <div class="pull-right">
+                <button type="button" class="btn btn-default"><i class="fa fa-reply"></i> Reply</button>
+                <button type="button" class="btn btn-default"><i class="fa fa-share"></i> Forward</button>
+              </div>
+              <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i> Delete</button>
+              <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+            </div>
+            <!-- /.panel-footer -->
+          </div>

@@ -1,0 +1,35 @@
+
+{% if company_bank_account.account_holder == None %}
+<form class="form-horizontal" role="presentation">
+    <div class="form-group input-group">
+        <span class="input-group-addon"> <i class="fa fa-institution"> </i> Account Holder </span>
+        <input type="text" class="form-control" id="account-number" value="{{ company_bank_account.account_holder }}" readonly="readonly">
+    </div>
+
+    <div class="form-group input-group">
+        <span class="input-group-addon"> <i class="fa fa-file-text"> </i> Account Number </span>
+        <input type="text" class="form-control" id="account-number" value="{{ company_bank_account.account_number }}" readonly="readonly">
+    </div>
+    <div class="form-group input-group">
+        <span class="input-group-addon"> <i class="fa fa-check"> </i> Account Type </span>
+        <input type="text" class="form-control" id="account-number" value="{{ company_bank_account.account_type }}" readonly="readonly">
+    </div>
+    <div class="form-group input-group">
+        <span class="input-group-addon"> <i class="fa fa-code"> </i> Branch Code </span>
+        <input type="text" class="form-control" id="account-number" value="{{ company_bank_account.branch_code }}" readonly="readonly">
+    </div>
+    <div class="form-group input-group">
+        <span class="input-group-addon"> <i class="fa fa-file-text-o"> </i> Reference </span>
+        <input type="text" class="form-control" id="account-number" value="" readonly="readonly">
+    </div>
+
+    <div class="form-group input-group">
+        <span class="input-group-addon panel-info"> Note that payment information will be sent to your Email Address and also as an SMS if your Cell number is provided </span>
+    </div>
+ </form>
+
+
+{% else %}
+    <strong>Bank Account not available </strong>
+
+{% endif %}

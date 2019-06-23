@@ -1,0 +1,78 @@
+
+
+
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="/" id="home"><img src="/static/img/ned.jpg" title="NED Media Group"></a>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-user-md"></i> <strong> Accounts</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-toggle-on fa-fw"></i> Create a New Account</h3>
+                </div>
+                <div class="panel-body">
+
+                    <form id="loginform" role="form">
+                        <div class="form-group">
+                            <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                                <span class="input-group-addon"><i class="fa fa-fw fa-user"> </i> Names </span>
+                                <input type="text" id="names" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-envelope"> </i> Email </span>
+                            <input type="email" id="username" class="form-control">
+                        </div>
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-key"> </i> Password </span>
+                            <input type="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-key"> </i> Password </span>
+                            <input type="password" id="pass2" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <div id="formresponseinf"></div>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-lock"> </i> </span>
+                            <button type="button" id="createbutt" class="btn btn-block btn-primary" onclick="CreateNewUser()"><strong> Create</strong></button>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-lock"> </i> </span>
+                            <button type="button" id="login" class="btn btn-block btn-warning" onclick="OnAuthMenu(this.id)"><strong>Back to Login</strong></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-info-circle fa-fw"></i> Why Login ? </h3>
+                </div>
+                <div class="panel-body">
+                    <blockquote>
+                        Please login or create an account in order for you to access our services
+
+                    </blockquote>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

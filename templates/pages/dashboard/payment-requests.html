@@ -1,0 +1,43 @@
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-credit-card fa-fw"> </i> <strong>Payment Requests </strong> </h3>
+                </div>
+
+                <div class="panel-body">
+
+
+
+                    <table id="payments-list-table" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td><strong>Order Number</strong></td>
+                                <td><strong>Reference</strong></td>
+                                <td><strong>Amount</strong></td>
+                                <td><strong>Actual</strong></td>
+                                <td><strong>Date Created</strong></td>
+                                <td><strong>Date Paid</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for this_orders in orders_list %}
+                            <tr>
+                                <td><a href="#" id="payments-{{ this_orders.order_number }}" onclick="SubDashMenu(this.id)"> <strong> {{ this_orders.order_number }}</strong></a></td>
+                                <td>{{ this_orders.order_date }}</td>
+                                <td>{{ this_orders.order_time }}</td>
+                                <td>{{ this_orders.order_started }}</td>
+                                <td>{{ this_orders.order_ended }}</td>
+                                <td>{{ this_orders.total_order_amount }}</td>
+                                <td><a href="#" id="clients-{{ this_orders.userid }}" onclick="SubDashMenu(this.id)"> <strong>{{ this_orders.names }}</strong></a></td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>

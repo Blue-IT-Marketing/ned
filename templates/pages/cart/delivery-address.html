@@ -1,0 +1,63 @@
+
+
+
+
+<div class="panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title"> <strong> <i class="fa fa-truck"> </i> Delivery Address</strong></h4>
+    </div>
+<div class="row">
+<div class="col-lg-8">
+  <div class="panel-body">
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Stand # </span>
+            {% if delivery_address.stand != None %}
+                <input type="text" class="form-control" id="standnumber" name="standnumber" value="{{ delivery_address.stand }}">
+            {% else %}
+                <input type="text" class="form-control" id="standnumber" name="standnumber">
+            {% endif %}
+        </div>
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Street Name </span>
+            {% if delivery_address.streetname != None %}
+                <input type="text" class="form-control" id="streetname" name="streetname" value="{{ delivery_address.streetname }}">
+            {% else %}
+                <input type="text" class="form-control" id="streetname" name="streetname">
+            {% endif %}
+        </div>
+
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> City/Town </span>
+            {% if delivery_address.city != None %}
+                <input type="text" class="form-control" id="physicalcity" name="physicalcity" value="{{ delivery_address.city }}">
+            {% else %}
+                <input type="text" class="form-control" id="physicalcity" name="physicalcity">
+            {% endif %}
+        </div>
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Province </span>
+            {% if delivery_address.province != None %}
+                <input type="text" class="form-control" id="physicalprovince" name="physicalprovince" value="{{ delivery_address.province }}">
+            {% else %}
+                <input type="text" class="form-control" id="physicalprovince" name="physicalprovince">
+            {% endif %}
+        </div>
+        <div class="form-group input-group" onclick="this.classList.remove('has-error')">
+            <span class="input-group-addon"> <i class="fa fa-address fa-fw"> </i> Postal Code </span>
+            {% if delivery_address.postalcode != None %}
+                <input type="text" class="form-control" id="physicalcode" name="physicalcode" value="{{ delivery_address.postalcode }}">
+            {% else %}
+                <input type="text" class="form-control" id="physicalcode" name="physicalcode">
+            {% endif %}
+        </div>
+
+        <div class="form-group input-group">
+            <button type="button" class="btn btn-primary btn-block" id="savedeliveryaddress"><strong><i class="fa fa-address-card"> </i> Update Delivery Address</strong></button>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+
+
